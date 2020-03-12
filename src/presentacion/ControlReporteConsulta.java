@@ -24,6 +24,7 @@ public class ControlReporteConsulta {
 	/**
 	 * Constructor
 	 * @param servicio Servicio de consulta
+	 * @wbp.parser.entryPoint
 	 */
 	public ControlReporteConsulta(ServicioConsulta servicio) {
 		this.servicioConsulta = servicio;
