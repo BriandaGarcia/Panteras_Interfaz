@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import negocio.dominio.Reporte;
+import java.awt.Color;
 
 /**
  * Ventana que despliega el reporte financiero generado
@@ -44,20 +45,28 @@ public class VentanaMuestraReporte extends JFrame implements ActionListener{
 	 */
 	public VentanaMuestraReporte(ControlReporteFinanciero control, ArrayList<Reporte> reporte, String mes, String año) throws HeadlessException {
 		super("Reporte Generado");
+		setBackground(Color.WHITE);
 		this.control=control;
 		setSize(400, 600);
 		setLocationRelativeTo(null);
 		
 		panel1=new JPanel();
+		panel1.setBackground(Color.WHITE);
 		panel2=new JPanel();
+		panel2.setBackground(Color.WHITE);
+		panel2.setBounds(0, 0, 382, 142);
 		panel3=new JPanel();
+		panel3.setBounds(0, 157, 382, 157);
 		panel4=new JPanel();
+		panel4.setBackground(Color.WHITE);
 		panel5=new JPanel();
+		panel5.setBackground(Color.WHITE);
 		
 		label8=new JLabel(dateFormat.format(fecha));
-		label8.setFont(new Font("Arial Black", Font.BOLD, 13));
+		label8.setBounds(22, 0, 360, 39);
+		label8.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		label1=new JLabel("Informe Cruz Roja");
-		label1.setFont(new Font("Arial Black", Font.BOLD, 25));
+		label1.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		if(mes.equals("")) {
 			label2=new JLabel("Periodo:  "+año);
 		}
@@ -66,21 +75,26 @@ public class VentanaMuestraReporte extends JFrame implements ActionListener{
 		}
 		label2.setFont(new Font("Arial Black", Font.BOLD, 15));
 		label3=new JLabel("Numero de acciones:  "+reporte.size());
-		label3.setFont(new Font("Arial Black", Font.BOLD, 15));
+		label3.setBounds(22, 39, 360, 39);
+		label3.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		label4=new JLabel("Servicios:");
-		label4.setFont(new Font("Arial Black", Font.BOLD, 15));
+		label4.setBounds(22, 78, 360, 39);
+		label4.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		label6=new JLabel("Tipo");
-		label6.setFont(new Font("Arial Black", Font.BOLD, 15));
+		label6.setBackground(Color.WHITE);
+		label6.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		label7=new JLabel("Costo");
-		label7.setFont(new Font("Arial Black", Font.BOLD, 15));
+		label7.setBackground(Color.WHITE);
+		label7.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		botonImprimir=new JButton("Imprimir");
+		botonImprimir.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonImprimir.setBackground(new Color(255, 204, 204));
 	
 		botonImprimir.addActionListener(this);
 		
 		panel1.add(label1);
-		
-		panel2.setLayout(new GridLayout(4,1));
+		panel2.setLayout(null);
 		panel2.add(label8);
 		panel2.add(label2);
 		panel2.add(label3);
@@ -96,18 +110,18 @@ public class VentanaMuestraReporte extends JFrame implements ActionListener{
 			total=total+reporte.get(i).getTotal();
 		}
 		label5=new JLabel("Total:  $"+total+".00 M/N");
-		label5.setFont(new Font("Arial Black", Font.BOLD, 15));
-
-		panel4.setLayout(new GridLayout(3,1));
+		label5.setBounds(22, 314, 359, 157);
+		label5.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		panel4.setLayout(null);
 		panel4.add(panel2);
 		panel4.add(panel3);
 		panel4.add(label5);
 		
 		panel5.add(botonImprimir);
 		
-		add(panel1,BorderLayout.NORTH);
-		add(panel4,BorderLayout.CENTER);
-		add(panel5,BorderLayout.SOUTH);
+		getContentPane().add(panel1,BorderLayout.NORTH);
+		getContentPane().add(panel4,BorderLayout.CENTER);
+		getContentPane().add(panel5,BorderLayout.SOUTH);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}

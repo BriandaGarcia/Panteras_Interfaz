@@ -10,6 +10,9 @@ public class ControlPrincipal {
 	private VentanaDoctor ventanaDoc;
 	private VentanaRecepcionista ventanaRec;
 	private VentanaFarmaceutica ventanaFarma;
+	private VentanaDoctorAux ventanaDocAux;
+	private VentanaRecepcionistaAux ventanaRecAux;
+	private VentanaFarmaceuticaAux ventanaFarmaAux;
 	
 	private  ControlNuevoPpaciente control_nuevo_paciente;
 	private ControlEliminaEmpleado control_elimina_emp;
@@ -87,6 +90,21 @@ public class ControlPrincipal {
 		ventanaFarma=new VentanaFarmaceutica(this);
 		ventanaFarma.abre();
 	}
+	public void ventanaDocAux(int i) {
+		ventanaDocAux=new VentanaDoctorAux(this);
+		ventanaDocAux.abre(i);
+	}
+	
+	public void ventanaRecAux(int i) {
+		ventanaRecAux=new VentanaRecepcionistaAux(this);
+		ventanaRecAux.abre(i);
+	}
+	
+	public void ventanaFarmaAux(int i) {
+		ventanaFarmaAux=new VentanaFarmaceuticaAux(this);
+		ventanaFarmaAux.abre(i);
+	}
+	
 	
 	public String login(String nombre, String contra) {
 		return control_Usuario.verificaUsuario(nombre, contra);
