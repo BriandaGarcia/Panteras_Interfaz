@@ -27,12 +27,11 @@ public class VentanaFarmaceutica extends JFrame implements ActionListener {
 	
 	private ControlPrincipal control;
 	
-	JPanel panel1, panel2, panel3,panel4,aux;
-	JLabel label1,img;
-	JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8;
+	JPanel panel1, panel2, panel3;
+	JLabel label1,img,label_2;
+	JButton boton1,boton2,boton3,boton4;
 	Date fecha=new Date();
 	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	private JLabel label_2;
 
 	public VentanaFarmaceutica(ControlPrincipal control) throws HeadlessException {
 		super("Farmaceutica");
@@ -43,8 +42,7 @@ public class VentanaFarmaceutica extends JFrame implements ActionListener {
 		panel2=new JPanel();
 		panel2.setBorder(new LineBorder(SystemColor.activeCaption, 3, true));
 		panel2.setBackground(Color.WHITE);
-		panel4=new JPanel();
-		aux=new JPanel();
+		
 		ImageIcon icon=new ImageIcon(getClass().getResource("/imagenes/farmaceutica.jpg"));
 		Image imagen=icon.getImage();
 		ImageIcon icones=new ImageIcon(imagen.getScaledInstance(100,100,imagen.SCALE_SMOOTH));
@@ -70,29 +68,16 @@ public class VentanaFarmaceutica extends JFrame implements ActionListener {
 		boton3.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		boton3.setBorder(new LineBorder(Color.RED, 1, true));
 		boton3.setBackground(new Color(255, 204, 204));
-		boton5=new JButton("Regresar");
-		
-		boton6=new JButton("Agregar Medicamento");
-		boton7=new JButton("Actualizar Medicamento");
-		boton8=new JButton("Eliminar Medicamento");
 		
 		boton1.addActionListener(this);
 		boton2.addActionListener(this);
 		boton3.addActionListener(this);
-		boton5.addActionListener(this);
-		boton6.addActionListener(this);
-		boton7.addActionListener(this);
-		boton8.addActionListener(this);
+		
 		panel2.setLayout(null);
 		panel2.add(boton1);
 		panel2.add(boton2);
 		panel2.add(boton3);
-		
-		//panel de Inventario
-		panel4.setLayout(new FlowLayout());
-		panel4.add(boton6);
-		panel4.add(boton7);
-		panel4.add(boton8);
+
 		getContentPane().add(panel2,BorderLayout.CENTER);
 		
 		panel1=new JPanel();
@@ -158,39 +143,12 @@ public class VentanaFarmaceutica extends JFrame implements ActionListener {
 		
 		//Opciones correspondientes al inventario
 		if(e.getSource()==boton3) {
-			panel2.setVisible(false);
-			panel3.setVisible(false);
-			
-			getContentPane().add(panel4,BorderLayout.CENTER);
-			aux.add(boton5);
-			getContentPane().add(aux,BorderLayout.SOUTH);
-			panel4.setVisible(true);
-			aux.setVisible(true);
+			control.ventanaFarmaAux(3);
 		}
 		
 		if(e.getSource()==boton4) {
 			setVisible(false);
 			control.inicia();
-		}
-		//Regresar
-		if(e.getSource()==boton5) {
-			panel4.setVisible(false);
-			aux.setVisible(false);
-			
-			panel2.setVisible(true);
-			panel3.setVisible(true);
-		}
-		
-		if(e.getSource()==boton6) {
-			control.agregaMedicamento();
-		}
-		
-		if(e.getSource()==boton7) {
-			control.actualizaMedicamento();
-		}
-		
-		if(e.getSource()==boton8) {
-			
 		}
 	}
 

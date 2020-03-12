@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.Color;
 
 /**
  * Ventana para la generacion del reporte financiero
@@ -37,7 +38,7 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 	public VentanaReporteFinanciero(ControlReporteFinanciero control) throws HeadlessException{
 		super("Reporte Financiero");
 		this.control=control;
-		setSize(450, 200);
+		setSize(450, 215);
 		setLocationRelativeTo(null);
 		
 		panel1=new JPanel();
@@ -71,10 +72,18 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 		listaAño.addItem("2020");
 		
 		botonAño=new JButton("Anual");
+		botonAño.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonAño.setBackground(new Color(255, 204, 204));
+		botonAño.setBounds(69, 13, 291, 27);
 		botonMes=new JButton("Mensual");
+		botonMes.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonMes.setBackground(new Color(255, 204, 204));
+		botonMes.setBounds(69, 54, 291, 27);
 		botonGenerar=new JButton("Generar");
 		botonCancelar=new JButton("Cancelar");
 		botonRegresar=new JButton("Regresar");
+		botonRegresar.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonRegresar.setBackground(new Color(255, 204, 204));
 		
 		botonAño.addActionListener(this);
 		botonMes.addActionListener(this);
@@ -83,8 +92,7 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 		botonRegresar.addActionListener(this);
 
 		panel1.add(label1);
-		
-		panel2.setLayout(new GridLayout(3,1));
+		panel2.setLayout(null);
 		panel2.add(botonAño);
 		panel2.add(botonMes);
 
