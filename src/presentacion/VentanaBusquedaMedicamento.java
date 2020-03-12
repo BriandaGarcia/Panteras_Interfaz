@@ -25,7 +25,6 @@ import javax.swing.JTextField;
 
 import negocio.dominio.Medicamento;
 import negocio.dominio.Pago;
-import java.awt.Color;
 /*
  * @autor Franco Torres Isabel Estephanea
  * La ventana donde se muestran todos los medicamentos que estan en el catalogo 
@@ -72,16 +71,12 @@ public class VentanaBusquedaMedicamento extends JFrame implements ActionListener
 		//label7=new JLabel("Nombre del medicamento a buscar");
 		label2=new JLabel("Nombre");
 		label2.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label2.setBackground(Color.WHITE);
 		label4=new JLabel("Precio");
 		label4.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label4.setBackground(Color.WHITE);
 		label6=new JLabel("Cantidad");
 		label6.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label6.setBackground(Color.WHITE);
 		label5=new JLabel("ID");
 		label5.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label5.setBackground(Color.WHITE);
 		
 		text1=new JTextField(50);
 		

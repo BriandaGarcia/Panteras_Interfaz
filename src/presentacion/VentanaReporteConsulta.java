@@ -124,7 +124,7 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		getContentPane().add(panel2,BorderLayout.CENTER);
 		panel3=new JPanel();
 		panel3.setBackground(Color.WHITE);
-		panel3.setBounds(10, 394, 325, 117);
+		panel3.setBounds(10, 416, 325, 117);
 		panel2.add(panel3);
 		panel3.setLayout(null);
 		botonCancelar=new JButton("");
@@ -145,7 +145,7 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		botonCancelar.setHorizontalTextPosition(SwingConstants.CENTER);
 		botonCancelar.setContentAreaFilled(false);
 		botonCancelar.setIcon(new ImageIcon(VentanaReporteConsulta.class.getResource("/imagenes/regresar_atras.png")));
-		botonCancelar.setBounds(212, 11, 103, 75);
+		botonCancelar.setBounds(170, 11, 103, 75);
 		panel3.add(botonCancelar);
 		
 		botonAceptar=new JButton("");
@@ -166,7 +166,7 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		botonAceptar.setHorizontalTextPosition(SwingConstants.CENTER);
 		botonAceptar.setContentAreaFilled(false);
 		botonAceptar.setIcon(new ImageIcon(VentanaReporteConsulta.class.getResource("/imagenes/aceptar.jpg")));
-		botonAceptar.setBounds(137, 11, 83, 75);
+		botonAceptar.setBounds(57, 11, 83, 75);
 		panel3.add(botonAceptar);
 		
 		botonAceptar.addActionListener(this);

@@ -77,13 +77,18 @@ public class VentanaPagoServicio extends JFrame implements ActionListener {
 		label6.setBounds(136, 218, 57, 31);
 		
 		text1=new JTextField(dateFormat.format(fecha));
+		text1.setBorder(new LineBorder(Color.RED, 1, true));
 		text1.setHorizontalAlignment(SwingConstants.LEFT);
 		text1.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		text1.setBounds(231, 88, 165, 20);
 		text2=new JTextField(30);		
 		text3=new JTextField(30);		
+		text3.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		text3.setBorder(new LineBorder(Color.RED, 1, true));
 		text3.setBounds(231, 134, 165, 20);
 		text4=new JTextField(250);
+		text4.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		text4.setBorder(new LineBorder(Color.RED, 1, true));
 		text4.setBounds(231, 224, 165, 20);
 		
 		listaServicio=new Choice();
@@ -128,7 +133,7 @@ public class VentanaPagoServicio extends JFrame implements ActionListener {
 		botonGuardar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				botonGuardar.setText("Guardar");
+				botonGuardar.setText("Imprimir");
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -137,7 +142,7 @@ public class VentanaPagoServicio extends JFrame implements ActionListener {
 		});
 		botonGuardar.setVerticalTextPosition(SwingConstants.BOTTOM);
 		botonGuardar.setVerticalAlignment(SwingConstants.BOTTOM);
-		botonGuardar.setIcon(new ImageIcon(VentanaPagoServicio.class.getResource("/imagenes/guardar.png")));
+		botonGuardar.setIcon(new ImageIcon(VentanaPagoServicio.class.getResource("/imagenes/imprimir.png")));
 		botonGuardar.setHorizontalTextPosition(SwingConstants.CENTER);
 		botonGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		botonGuardar.setContentAreaFilled(false);
