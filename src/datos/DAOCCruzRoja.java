@@ -462,14 +462,13 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 	/**
 	 * Guarda el reporte de una consulta
 	 * @param fech Fecha en la que el reporte se creo
-	 * @param hora Hora de la cual es la cita de la que se crea el reporte
 	 * @param doctor Doctor que creo el reporte
 	 * @param paciente Paciente del cual ha sido creado el reporte
 	 * @param servicio Servicio que se ofreció en la consulta
 	 * @descripcion Descripcion de la consulta
 	 * @return Devuelve true si se almacenó el reporte correctamete, false en caso contrario
 	 */
-	public boolean guardaReporteConsulta(String fech, String hora, String doctor, String paciente, String servicio, String descripcion) {
+	public boolean guardaReporteConsulta(String fech, String doctor, String paciente, String servicio, String descripcion) {
 		int idservicio=0;
 		
 		try {
@@ -482,7 +481,7 @@ public class DAOCCruzRoja implements DAOCruzRoja {
 				idservicio=rs.getInt("idservicio");
 			}
 			// Ejecuta la instruccion
-			statement.execute("INSERT INTO consulta VALUES ("+idservicio+",'"+paciente+"','"+fech+"','"+hora+"','"+doctor+"','"+descripcion+"')");
+			statement.execute("INSERT INTO consulta VALUES ("+idservicio+",'"+paciente+"','"+fech+"','"+doctor+"','"+descripcion+"')");
 			return true;
 		} 
 		catch (SQLException e) {

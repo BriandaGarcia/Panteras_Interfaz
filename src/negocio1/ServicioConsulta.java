@@ -17,14 +17,13 @@ public interface ServicioConsulta {
 	/**
 	 * Interfaz del servicio de consulta
  	 * @param fech fecha de generacion del reporte
-	 * @param hora Hora de la cual es la cita de la que se crea el reporte
 	 * @param doctor doctor que generó el reporte
 	 * @param paciente paciente del cual se generó el reporte
 	 * @param servicio servicio del cual se hizo el reporte
 	 * @param descripcion descripcion general de la consulta
 	 * @return True si se almaceno correctamente, false si no.
 	 */
-	public boolean agregaReporteconsulta(String fech, String hora, String doctor, String paciente, String servicio, String descripcion);
+	public boolean agregaReporteconsulta(String fech,String doctor, String paciente, String servicio, String descripcion);
 
 	public boolean almacenaCita(int idpago, String idpaciente, String iddoctor, String fech, String h);
 

@@ -37,11 +37,11 @@ import java.awt.SystemColor;
 public class VentanaReporteConsulta extends JFrame implements ActionListener {
 
 	JPanel panel1,panel2,panel3;
-	JLabel label1,label2,label3,label4,label5,label6,label7;
+	JLabel label1,label2,label3,label4,label5,label6;
 	JTextField text1,text2,text3,text4;
-	JButton botonAceptar,botonCancelar,botonComprobar;
-	Choice listaServicio,listaHora;
-	String fech,doctor,paciente,servicio,descripcion,hora;
+	JButton botonAceptar,botonCancelar;
+	Choice listaServicio;
+	String fech,doctor,paciente,servicio,descripcion;
 	Date fecha=new Date();
 	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	
@@ -64,25 +64,21 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		label2.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		label2.setBounds(74, 68, 61, 38);
-		label7=new JLabel("Hora : ");
-		label7.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label7.setHorizontalAlignment(SwingConstants.CENTER);
-		label7.setBounds(78, 119, 57, 20);
 		label3=new JLabel("Id Doctor (a) : ");
 		label3.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		label3.setHorizontalAlignment(SwingConstants.CENTER);
-		label3.setBounds(31, 195, 97, 38);
+		label3.setBounds(33, 152, 97, 38);
 		label4=new JLabel("Id Paciente : ");
 		label4.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		label4.setHorizontalAlignment(SwingConstants.CENTER);
-		label4.setBounds(33, 164, 102, 20);
+		label4.setBounds(33, 119, 102, 20);
 		label5=new JLabel("Tipo de Servicio : ");
 		label5.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label5.setBounds(10, 244, 129, 44);
+		label5.setBounds(10, 193, 129, 44);
 		label6=new JLabel("Descripción : ");
 		label6.setHorizontalAlignment(SwingConstants.CENTER);
 		label6.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		label6.setBounds(33, 286, 102, 31);
+		label6.setBounds(33, 250, 102, 31);
 		
 		text1=new JTextField(dateFormat.format(fecha));
 		text1.setBorder(new LineBorder(Color.RED, 1, true));
@@ -91,21 +87,21 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		text2=new JTextField(30);		
 		text2.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		text2.setBorder(new LineBorder(Color.RED, 1, true));
-		text2.setBounds(159, 204, 152, 20);
+		text2.setBounds(159, 161, 152, 20);
 		text3=new JTextField(30);		
 		text3.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		text3.setBorder(new LineBorder(Color.RED, 1, true));
-		text3.setBounds(159, 164, 152, 20);
+		text3.setBounds(159, 119, 152, 20);
 		text4=new JTextField(250);
 		text4.setBorder(new LineBorder(Color.RED, 1, true));
 		text4.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		text4.setBounds(33, 316, 278, 76);
+		text4.setBounds(33, 294, 278, 117);
 		
 		listaServicio=new Choice();
 		listaServicio.setForeground(SystemColor.desktop);
 		listaServicio.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		listaServicio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		listaServicio.setBounds(159, 258, 152, 24);
+		listaServicio.setBounds(159, 203, 152, 24);
 		listaServicio.addItem("Consulta General");
 		listaServicio.addItem("Inyecion");
 		listaServicio.addItem("Ortopedista");
@@ -114,17 +110,9 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		listaServicio.addItem("Oftalmología");
 		listaServicio.addItem("Podologia");
 		
-		listaHora=new Choice();
-		listaHora.setForeground(SystemColor.desktop);
-		listaHora.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		listaHora.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		listaHora.setBounds(159, 119, 152, 24);
-		listaHora.addItem("");
 		panel2.setLayout(null);
 		panel2.add(label2);
 		panel2.add(text1);
-		panel2.add(label7);
-		panel2.add(listaHora);
 		panel2.add(label4);
 		panel2.add(text3);
 		panel2.add(label3);
@@ -180,14 +168,6 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		botonAceptar.setIcon(new ImageIcon(VentanaReporteConsulta.class.getResource("/imagenes/aceptar.jpg")));
 		botonAceptar.setBounds(137, 11, 83, 75);
 		panel3.add(botonAceptar);
-		botonComprobar=new JButton("Comprobar");
-		botonComprobar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		botonComprobar.setBackground(new Color(255, 204, 204));
-		botonComprobar.setBorder(new LineBorder(Color.RED));
-		botonComprobar.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		botonComprobar.setBounds(0, 52, 127, 23);
-		panel3.add(botonComprobar);
-		botonComprobar.addActionListener(this);
 		
 		botonAceptar.addActionListener(this);
 		botonCancelar.addActionListener(this);
@@ -225,26 +205,12 @@ public class VentanaReporteConsulta extends JFrame implements ActionListener {
 		 */
 		if(e.getSource()==botonAceptar) {
 			fech=text1.getText();
-			hora=listaHora.getSelectedItem();
 			doctor=text2.getText();
 			paciente=text3.getText();
 			servicio=listaServicio.getSelectedItem();
 			descripcion=text4.getText();
 			
-			control.guardaReporteConsulta(fech,hora,doctor,paciente,servicio,descripcion);
-		}
-		/**
-		 * Recupera las horas de la cita del paciente en la fecha establecida
-		 */
-		if(e.getSource()==botonComprobar) {
-			ArrayList<Ficha_medica> horas = new ArrayList<Ficha_medica>();
-			horas=control.recuperaHoras(text1.getText(),text3.getText());
-			if(horas!=null) {
-				for(int i=0; i<horas.size();i++) {
-					listaHora.addItem(horas.get(i).getHora());
-				}
-			}
-			abre();
+			control.guardaReporteConsulta(fech,doctor,paciente,servicio,descripcion);
 		}
 	}
 

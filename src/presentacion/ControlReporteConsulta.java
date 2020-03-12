@@ -41,17 +41,16 @@ public class ControlReporteConsulta {
 	/**
 	 * Hace la comunicacion con el servicio de consulta
 	 * @param fech fecha en la que se creo el reporte
-	 * @param hora Hora de la cual es la cita de la que se crea el reporte
 	 * @param doctor doctor que creo el reporte
 	 * @param paciente paciente del cual se creo el reporte
 	 * @param servicio servicio ofrecido en la consulta
 	 * @param descripcion desccripcion general de la consulta
 	 */
-	public void guardaReporteConsulta(String fech, String hora, String doctor, String paciente, String servicio, String descripcion) {
+	public void guardaReporteConsulta(String fech,String doctor, String paciente, String servicio, String descripcion) {
 		/**
 		 * Valida que los campos no esten vacios
 		 */
-		if(hora.equals("") || doctor.equals("") || paciente.equals("") || descripcion.equals("")) {
+		if(doctor.equals("") || paciente.equals("") || descripcion.equals("")) {
 			ventana.muestraMensaje("Campos vacios");
 			ventana.abre();
 		}
@@ -60,7 +59,7 @@ public class ControlReporteConsulta {
 			 * Si todos los campos están llenos se comunica con el servicio para hacer el almacenamiento del reporte
 			 * Si se almaceno correctamente, muestra un mensaje de exito
 			 */
-			if(servicioConsulta.agregaReporteconsulta(fech,hora,doctor,paciente,servicio,descripcion)) {
+			if(servicioConsulta.agregaReporteconsulta(fech,doctor,paciente,servicio,descripcion)) {
 				ventana.muestraMensaje("Reporte guardado exitosamente");
 				ventana.cierra();
 			}
