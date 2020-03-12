@@ -50,8 +50,8 @@ public class ServicioConsultaimp implements ServicioConsulta{
 	 * Hace la conexion con el DAO pasandole los parametros recibidos
 	 */
 	@Override
-	public boolean agregaReporteconsulta(String fech, String hora, String doctor, String paciente, String servicio, String descripcion) {
-		if(dao.guardaReporteConsulta(fech,hora,doctor,paciente,servicio,descripcion)) {
+	public boolean agregaReporteconsulta(String fech,String doctor, String paciente, String servicio, String descripcion) {
+		if(dao.guardaReporteConsulta(fech,doctor,paciente,servicio,descripcion)) {
 			return true;
 		}
 		else

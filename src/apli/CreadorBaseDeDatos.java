@@ -138,11 +138,10 @@ public class CreadorBaseDeDatos {
 					"tipodeconsulta INT NOT NULL,"+
 					"idPaciente VARCHAR(45) NOT NULL,"+
 					"Fecha VARCHAR(30) NOT NULL,"+
-					"Hora VARCHAR(30) NOT NULL,"+
 					"doctoriddoc VARCHAR(45),"+
 					"observaciones VARCHAR(250) NOT NULL,"+
 					"PRIMARY KEY (observaciones),"+
-					"CONSTRAINT fkconsultaFichamedica1 FOREIGN KEY (idPaciente , Fecha, Hora) REFERENCES Fichamedica (pacienteidpaciente , Fecha, Hora),"+
+					"CONSTRAINT fkconsultaPaciente1 FOREIGN KEY (idPaciente) REFERENCES Paciente (idPaciente),"+
 					"CONSTRAINT fkconsultaServicio1 FOREIGN KEY (tipodeconsulta) REFERENCES Servicio (idservicio),"+
 					"CONSTRAINT fkconsultadoctor1 FOREIGN KEY (doctoriddoc) REFERENCES doctor (iddoc))"
 					);

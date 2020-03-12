@@ -56,6 +56,7 @@ public class VentanaMuestraReporte extends JFrame implements ActionListener{
 		panel2.setBackground(Color.WHITE);
 		panel2.setBounds(0, 0, 382, 142);
 		panel3=new JPanel();
+		panel3.setBackground(Color.WHITE);
 		panel3.setBounds(0, 157, 382, 157);
 		panel4=new JPanel();
 		panel4.setBackground(Color.WHITE);
@@ -105,12 +106,13 @@ public class VentanaMuestraReporte extends JFrame implements ActionListener{
 		panel3.add(label7);
 		//Despliega el reporte financiero
 		for(int i=0;i<reporte.size();i++) {
+			panel3.setSize(400,reporte.size()*20);
 			panel3.add(new JLabel(""+reporte.get(i).getServicio()));
 			panel3.add(new JLabel(""+reporte.get(i).getTotal()));
 			total=total+reporte.get(i).getTotal();
 		}
 		label5=new JLabel("Total:  $"+total+".00 M/N");
-		label5.setBounds(22, 314, 359, 157);
+		label5.setBounds(22, 376, 359, 95);
 		label5.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		panel4.setLayout(null);
 		panel4.add(panel2);

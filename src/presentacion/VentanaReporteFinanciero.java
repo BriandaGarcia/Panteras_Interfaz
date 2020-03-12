@@ -42,16 +42,22 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		
 		panel1=new JPanel();
+		panel1.setBackground(Color.WHITE);
 		panel2=new JPanel();
+		panel2.setBackground(Color.WHITE);
 		panel3=new JPanel();
+		panel3.setBackground(Color.WHITE);
 		panel4=new JPanel();
+		panel4.setBackground(Color.WHITE);
 		panel5=new JPanel();
+		panel5.setBackground(Color.WHITE);
 		panel6=new JPanel();
+		panel6.setBackground(Color.WHITE);
 		
 		label1=new JLabel("Selecciona el tipo de reporte: ");
 		label1.setFont(new Font("Times New Roman", Font.BOLD, 22));
 		label2=new JLabel("Selecciona el periodo: ");
-		label2.setFont(new Font("Arial Black", Font.BOLD, 25));
+		label2.setFont(new Font("Times New Roman", Font.BOLD, 22));
 		
 		listaMes=new Choice();
 		listaAño=new Choice();
@@ -70,6 +76,8 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 		listaMes.addItem("12");
 		listaAño.addItem("2019");
 		listaAño.addItem("2020");
+		listaMes.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		listaAño.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		
 		botonAño=new JButton("Anual");
 		botonAño.setFont(new Font("Times New Roman", Font.BOLD, 15));
@@ -80,8 +88,12 @@ public class VentanaReporteFinanciero extends JFrame implements ActionListener {
 		botonMes.setBackground(new Color(255, 204, 204));
 		botonMes.setBounds(69, 54, 291, 27);
 		botonGenerar=new JButton("Generar");
+		botonGenerar.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonGenerar.setBackground(new Color(255, 204, 204));
 		botonCancelar=new JButton("Cancelar");
-		botonRegresar=new JButton("Regresar");
+		botonCancelar.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		botonCancelar.setBackground(new Color(255, 204, 204));
+		botonRegresar=new JButton("Cancelar");
 		botonRegresar.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		botonRegresar.setBackground(new Color(255, 204, 204));
 		

@@ -19,6 +19,10 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.SystemColor;
@@ -33,6 +37,8 @@ public class VentanaAgendaCita extends JFrame implements ActionListener {
 	JButton disponibilidad,cancelar,guardar,limpiar;
 	String idpago,iddoctor,fech,idpaciente,h;
 	int idp;
+	Date fecha1=new Date();
+	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private ControlAgendaCita control=null;
 	private JLabel lblNewLabel;
@@ -75,7 +81,7 @@ public class VentanaAgendaCita extends JFrame implements ActionListener {
 		doctor.setBorder(new LineBorder(Color.RED, 1, true));
 		doctor.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		doctor.setBounds(222, 130, 129, 24);
-		fecha=new JTextField(30);
+		fecha= new JTextField(dateFormat.format(fecha1));
 		fecha.setBorder(new LineBorder(Color.RED, 1, true));
 		fecha.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		fecha.setBounds(220, 165, 129, 24);

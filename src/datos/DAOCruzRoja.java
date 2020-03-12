@@ -70,14 +70,13 @@ public interface DAOCruzRoja {
 	/**
 	 * Almacena los reportes de consulta
 	 * @param fech Fecha de creacion del reporte
-	 * @param hora Hora de la cual es la cita de la que se crea el reporte
 	 * @param doctor Doctor que crea el reporte
 	 * @param paciente Paciente al que pertenece el reporte
 	 * @param servicio Servicio del cual se hizo el reporte de consulta
 	 * @param descripcion Descripcion del reporte de consulta
 	 * @return True si se almacenó correctamente el reporte, false en caso contrario
 	 */
-	public boolean guardaReporteConsulta(String fech, String hora, String doctor, String paciente, String servicio, String descripcion);
+	public boolean guardaReporteConsulta(String fech, String doctor, String paciente, String servicio, String descripcion);
 
 	public boolean guardaCita(int idpago, String idpaciente, String iddoctor, String fech, String h);
 
